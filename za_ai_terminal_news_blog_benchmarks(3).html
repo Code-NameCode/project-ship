@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>ZA_AI://TERMINAL - Blog, News & AI Performance South Africa</title>
+    
+    <!-- Primary SEO Metadata -->
+    <meta name="description" content="South Africa's premier terminal-themed portal for local AI News, Draft National AI Policy updates, and the African LLM Leaderboard. Benchmarking Zulu, Xhosa, and Afrikaans language performance.">
+    <meta name="keywords" content="AI South Africa, LLM Benchmarks South Africa, DCDT AI Policy 2026, African Language Models, Telkom AI Institute, Zulu LLM Accuracy, Xhosa AI Translation, POPIA AI compliance, Tech News Johannesburg, Cape Town AI startups">
+    <meta name="author" content="ZA AI Terminal Division">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://za-ai-terminal.co.za/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://za-ai-terminal.co.za/">
+    <meta property="og:title" content="ZA_AI://TERMINAL - South African Blog, News & AI Leaderboard">
+    <meta property="og:description" content="Analyzing Artificial Intelligence performance, local language accuracy (Zulu/Xhosa), and policy changes in South Africa. Interactive retro-terminal theme.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0c0f12/10b981?text=ZA+AI+Leaderboard">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://za-ai-terminal.co.za/">
+    <meta property="twitter:title" content="ZA_AI://TERMINAL - South African Blog, News & AI Leaderboard">
+    <meta property="twitter:description" content="Analyzing Artificial Intelligence performance, local language accuracy (Zulu/Xhosa), and policy changes in South Africa. Interactive retro-terminal theme.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0c0f12/10b981?text=ZA+AI+Leaderboard">
+
+    <!-- Structured Data (JSON-LD) for Local South African SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://za-ai-terminal.co.za/#website",
+          "url": "https://za-ai-terminal.co.za/",
+          "name": "ZA AI Terminal",
+          "description": "Professional Blog, News and African LLM Performance Benchmarks custom-tailored for South Africa.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "ZA AI Innovation Systems",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://placehold.co/600x600/0c0f12/10b981?text=ZA-AI"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "160 Jan Smuts Avenue, Rosebank",
+              "addressLocality": "Johannesburg",
+              "addressRegion": "Gauteng",
+              "postalCode": "2196",
+              "addressCountry": "ZA"
+            }
+          }
+        },
+        {
+          "@type": "TechArticle",
+          "headline": "Bridging the Language Gap: Evaluating Multilingual LLMs on South African Languages",
+          "description": "An exhaustive analysis of state-of-the-art LLM capabilities across isiZulu, isiXhosa, Afrikaans, and Sepedi, utilizing modern benchmarks such as AfriMCQA and MasakhaNEWS.",
+          "author": {
+            "@type": "Organization",
+            "name": "ZA AI Systems Lab"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ZA AI Innovation Systems"
+          },
+          "datePublished": "2026-07-10T08:00:00+02:00",
+          "inLanguage": ["en-ZA", "zu-ZA", "xh-ZA"],
+          "about": [
+            {"@type": "Thing", "name": "Artificial Intelligence"},
+            {"@type": "Thing", "name": "Natural Language Processing"},
+            {"@type": "Thing", "name": "South Africa"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts for High Readability UI & Monospace Accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'Courier New', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            black: '#07090e',
+                            dark: '#0e131f',
+                            green: '#10b981',
+                            greenGlow: '#059669',
+                            amber: '#f59e0b',
+                            amberGlow: '#d97706',
+                            cyan: '#06b6d4',
+                            cyanGlow: '#0891b2',
+                            red: '#ef4444'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Retro Terminal Scanlines and Phosphor Flicker effects - Calibrated for legibility */
+        .terminal-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtled overlay opacity to improve readability over text */
+        .terminal-container::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 20;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        .crt-glow-green {
+            box-shadow: inset 0 0 60px rgba(16, 185, 129, 0.12), 0 0 10px rgba(16, 185, 129, 0.03);
+        }
+        .crt-glow-amber {
+            box-shadow: inset 0 0 60px rgba(245, 158, 11, 0.12), 0 0 10px rgba(245, 158, 11, 0.03);
+        }
+        .crt-glow-cyan {
+            box-shadow: inset 0 0 60px rgba(6, 182, 212, 0.12), 0 0 10px rgba(6, 182, 212, 0.03);
+        }
+
+        /* Subtle scanline animation */
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .scanline-bar {
+            background: rgba(16, 185, 129, 0.04);
+            animation: scanline 10s linear infinite;
+        }
+
+        /* Cursor blinking */
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+
+        /* Custom elegant scrollbar for clean scroll navigation */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080a0f;
+            border-left: 1px solid #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+
+        /* Responsive horizontal scrollbar hiding for swipe layouts */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-cyber-black text-slate-100 font-sans selection:bg-emerald-800 selection:text-white min-h-screen flex flex-col antialiased theme-green">
+
+    <!-- Top Grid Layout Wrapper -->
+    <div class="terminal-container flex-grow flex flex-col crt-glow-green transition-all duration-300 relative border-b border-zinc-800" id="terminal-wrapper">
+        <!-- Scanline Overlay -->
+        <div class="scanline-bar absolute inset-0 pointer-events-none z-30 w-full h-full"></div>
+
+        <!-- Header Console Status Bar -->
+        <header class="border-b border-emerald-500/30 bg-cyber-black/95 z-10 sticky top-0 px-4 py-4 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                
+                <!-- Logo & Brand ASCII Signal -->
+                <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+                    <div class="flex items-center gap-2">
+                        <span class="text-emerald-500 mr-1.5 font-extrabold text-xl font-mono" id="logo-icon">&lt;/&gt;</span> 
+                        <h1 class="text-lg md:text-2xl font-bold tracking-tight text-white flex items-center font-mono">
+                            ZA_AI::<span class="text-emerald-400" id="logo-sub">TERMINAL_v2.6</span>
+                        </h1>
+                    </div>
+                    <span class="text-[10px] md:text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 px-2 py-0.5 rounded uppercase tracking-widest animate-pulse" id="live-mode-badge">SECURE.co.za</span>
+                </div>
+
+                <!-- Live Environment Stats (SA specific indicators) -->
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] md:text-xs font-mono text-zinc-400 w-full md:w-auto justify-between md:justify-end border-t border-zinc-850 pt-3 md:pt-0 md:border-t-0">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span class="text-zinc-400">JINX/CINX: <span class="text-emerald-400 font-bold" id="ping-val">12ms</span></span>
+                    </div>
+                    <div>
+                        <span>SAST: <span class="text-emerald-400 font-bold" id="sast-clock">00:00:00</span></span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span>POPIA: <span class="text-emerald-400 font-semibold">COMPLIANT</span></span>
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 px-2 py-1 rounded">
+                        <button onclick="toggleAudioSystem()" id="sound-btn" class="hover:text-emerald-400 text-zinc-300 font-bold text-[10px] md:text-xs px-1 tracking-wider" title="Toggle Terminal Keystroke Sounds">
+                            🔊 AUDIO: ON
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Menu in Terminal Box Interface -->
+        <div class="bg-zinc-950/80 border-b border-zinc-800 px-4 py-3 z-10 sticky top-[71px] md:top-[73px] backdrop-blur-md">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <!-- Horizontally Scrollable Bar on Mobile -->
+                <div class="w-full lg:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
+                    <nav class="flex gap-2 min-w-max pb-1 lg:pb-0" aria-label="Terminal Navigation Tabs">
+                        <button onclick="switchTab('tab-news')" id="btn-tab-news" class="nav-tab active font-mono px-3 py-2 border border-emerald-500/40 text-emerald-400 bg-emerald-500/10 text-xs rounded transition-all flex items-center gap-2 min-h-[40px]">
+                            <span>[1]</span> NEWS & EDITORIAL
+                        </button>
+                        <button onclick="switchTab('tab-leaderboard')" id="btn-tab-leaderboard" class="nav-tab font-mono px-3 py-2 border border-zinc-800 text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/30 text-xs rounded transition-all flex items-center gap-2 min-h-[40px]">
+                            <span>[2]</span> AFRICA LLM BENCHMARKS
+                        </button>
+                        <button onclick="switchTab('tab-cli')" id="btn-tab-cli" class="nav-tab font-mono px-3 py-2 border border-zinc-800 text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/30 text-xs rounded transition-all flex items-center gap-2 min-h-[40px]">
+                            <span>[3]</span> CONSOLE SHELL
+                        </button>
+                        <button onclick="switchTab('tab-seo')" id="btn-tab-seo" class="nav-tab font-mono px-3 py-2 border border-zinc-800 text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/30 text-xs rounded transition-all flex items-center gap-2 min-h-[40px]">
+                            <span>[4]</span> ZA SEO CHECKLIST
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Color Palette Switcher -->
+                <div class="flex items-center gap-3 text-xs w-full lg:w-auto justify-between lg:justify-end border-t border-zinc-850 pt-2 lg:pt-0 lg:border-t-0">
+                    <span class="text-zinc-400 font-mono text-[10px] md:text-[11px] tracking-wider uppercase">MATRIX PALETTE:</span>
+                    <div class="flex gap-1.5 bg-zinc-900 p-1 rounded-lg border border-zinc-800">
+                        <button onclick="applyTheme('green')" class="w-6 h-6 rounded bg-emerald-500 hover:scale-110 active:scale-95 transition-all" title="Phosphor Green"></button>
+                        <button onclick="applyTheme('amber')" class="w-6 h-6 rounded bg-amber-500 hover:scale-110 active:scale-95 transition-all" title="Cyber Amber"></button>
+                        <button onclick="applyTheme('cyan')" class="w-6 h-6 rounded bg-cyan-500 hover:scale-110 active:scale-95 transition-all" title="Steel Cyan"></button>
+                        <button onclick="applyTheme('contrast')" class="w-6 h-6 rounded bg-slate-200 border border-slate-600 hover:scale-110 active:scale-95 transition-all" title="High Contrast Dark"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page Container containing various Views -->
+        <main class="max-w-7xl mx-auto p-4 md:p-6 w-full flex-grow grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
+            
+            <!-- LEFT PANEL: Dynamic content switcher based on tabs (Columns: 9) -->
+            <section class="lg:col-span-9 flex flex-col gap-6 w-full">
+
+                <!-- VIEW 1: News & Editorial Section -->
+                <article id="tab-news" class="tab-view block space-y-6">
+                    <div class="border border-emerald-500/20 rounded-lg bg-zinc-950/40 p-4 md:p-6 relative">
+                        <div class="absolute top-3 right-4 font-mono text-[9px] md:text-[10px] text-zinc-500 tracking-wider hidden sm:block">ID: PERSPECTIVE_DCDT_2026</div>
+                        <h2 class="text-lg md:text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                            <span class="text-emerald-500 font-mono">_</span> SOUTH AFRICAN AI REGULATION ENTRIES 2026
+                        </h2>
+                        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed max-w-4xl">
+                            A breakdown of the newly entered Cabinet approval phase of the <strong>Draft National Artificial Intelligence Policy of South Africa (2026)</strong>. Explore ethical governance structures, localized data compute modules, and robust anti-bias protocols built specifically to protect South African demographic context and indigenous linguistic lineages.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 text-[10px] md:text-xs font-mono mt-4">
+                            <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded hover:border-emerald-500/30 transition-all cursor-pointer">#PolicySA</span>
+                            <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded hover:border-emerald-500/30 transition-all cursor-pointer">#SADigitalFuture</span>
+                            <span class="bg-zinc-900/80 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded hover:border-emerald-500/30 transition-all cursor-pointer">#DCDT2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Editorial Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Blog Post 1 -->
+                        <div class="border border-zinc-800 rounded-lg bg-zinc-950/20 hover:border-emerald-500/40 hover:bg-zinc-950/40 transition-all p-4 md:p-6 flex flex-col justify-between group shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] md:text-xs font-mono text-zinc-400 mb-3">
+                                    <span>POSTED: 10 JULY 2026</span>
+                                    <span class="text-emerald-400 font-semibold uppercase tracking-wider">● REGULATORY NEWS</span>
+                                </div>
+                                <h3 class="text-base md:text-lg font-bold text-white mb-2.5 group-hover:text-emerald-400 transition-colors leading-snug">
+                                    Cabinet Receives South Africa's Draft AI Policy: Multi-Regulator Sector Model Finalized
+                                </h3>
+                                <p class="text-xs md:text-sm text-zinc-300 mb-5 leading-relaxed line-clamp-3">
+                                    The Department of Communications and Digital Technologies (DCDT) reports the Draft AI Policy has passed its Socio-Economic Impact Assessment. Moving away from a monolithic regulator, SA is establishing industry-focused governance ensuring the protection of local languages such as Khoe, San, isiZulu, and Sesotho.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-900 flex items-center justify-between">
+                                <button onclick="readArticle('policy-blog')" class="text-xs font-mono text-emerald-400 font-bold hover:underline hover:text-emerald-300 flex items-center gap-1.5 transition-colors min-h-[36px]">
+                                    READ LOGS_ &gt;
+                                </button>
+                                <span class="text-[10px] font-mono text-zinc-500">8 MIN READ</span>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 2 -->
+                        <div class="border border-zinc-800 rounded-lg bg-zinc-950/20 hover:border-amber-500/40 hover:bg-zinc-950/40 transition-all p-4 md:p-6 flex flex-col justify-between group shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] md:text-xs font-mono text-zinc-400 mb-3">
+                                    <span>POSTED: 09 JULY 2026</span>
+                                    <span class="text-amber-400 font-semibold uppercase tracking-wider">▲ ETHICAL AI</span>
+                                </div>
+                                <h3 class="text-base md:text-lg font-bold text-white mb-2.5 group-hover:text-amber-400 transition-colors leading-snug">
+                                    Justice Minister Warns of Algorithmic Racial Bias in Foreign-Trained Datasets
+                                </h3>
+                                <p class="text-xs md:text-sm text-zinc-300 mb-5 leading-relaxed line-clamp-3">
+                                    At the University of Johannesburg's 'AI and the Law' conference, Minister Mmamoloko Kubayi warned that deploying AI algorithms devoid of SA's historical contexts could perpetuate judicial inequalities and digitized racial segregation.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-900 flex items-center justify-between">
+                                <button onclick="readArticle('justice-blog')" class="text-xs font-mono text-amber-500 font-bold hover:underline hover:text-amber-450 flex items-center gap-1.5 transition-colors min-h-[36px]">
+                                    READ LOGS_ &gt;
+                                </button>
+                                <span class="text-[10px] font-mono text-zinc-500">12 MIN READ</span>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 3 -->
+                        <div class="border border-zinc-800 rounded-lg bg-zinc-950/20 hover:border-cyan-500/40 hover:bg-zinc-950/40 transition-all p-4 md:p-6 flex flex-col justify-between group shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] md:text-xs font-mono text-zinc-400 mb-3">
+                                    <span>POSTED: 15 JUNE 2026</span>
+                                    <span class="text-cyan-400 font-semibold uppercase tracking-wider">◆ INVESTMENT</span>
+                                </div>
+                                <h3 class="text-base md:text-lg font-bold text-white mb-2.5 group-hover:text-cyan-400 transition-colors leading-snug">
+                                    Telkom Pledges R100 Million to Build National AI Skills & Digital Inclusion Institute
+                                </h3>
+                                <p class="text-xs md:text-sm text-zinc-300 mb-5 leading-relaxed line-clamp-3">
+                                    Announced at the ITU Partner2Connect coalition, Telkom Group will initiate a direct R100m development ecosystem aimed at boosting youth access to local LLM computing resources and high-tier artificial intelligence training frameworks.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-900 flex items-center justify-between">
+                                <button onclick="readArticle('telkom-blog')" class="text-xs font-mono text-cyan-400 font-bold hover:underline hover:text-cyan-300 flex items-center gap-1.5 transition-colors min-h-[36px]">
+                                    READ LOGS_ &gt;
+                                </button>
+                                <span class="text-[10px] font-mono text-zinc-500">5 MIN READ</span>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 4 -->
+                        <div class="border border-zinc-800 rounded-lg bg-zinc-950/20 hover:border-emerald-500/40 hover:bg-zinc-950/40 transition-all p-4 md:p-6 flex flex-col justify-between group shadow-lg">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] md:text-xs font-mono text-zinc-400 mb-3">
+                                    <span>POSTED: 04 MAY 2026</span>
+                                    <span class="text-emerald-400 font-semibold uppercase tracking-wider">● LOCAL RESEARCH</span>
+                                </div>
+                                <h3 class="text-base md:text-lg font-bold text-white mb-2.5 group-hover:text-emerald-400 transition-colors leading-snug">
+                                    UCT Researchers Release Multilingual 11-Language Foundation Model for South Africa
+                                </h3>
+                                <p class="text-xs md:text-sm text-zinc-300 mb-5 leading-relaxed line-clamp-3">
+                                    A breakthrough computer science effort at the University of Cape Town has launched a modest yet highly capable 125M-parameter neural model tailored specifically to bridge the digital language divide across Sepedi, Ndebele, Zulu, and Xhosa.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-900 flex items-center justify-between">
+                                <button onclick="readArticle('uct-blog')" class="text-xs font-mono text-emerald-400 font-bold hover:underline hover:text-emerald-350 flex items-center gap-1.5 transition-colors min-h-[36px]">
+                                    READ LOGS_ &gt;
+                                </button>
+                                <span class="text-[10px] font-mono text-zinc-500">9 MIN READ</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- VIEW 2: Africa's LLM Leaderboard -->
+                <article id="tab-leaderboard" class="tab-view hidden space-y-6">
+                    <div class="border border-emerald-500/20 rounded-lg bg-zinc-950/40 p-4 md:p-6">
+                        <h2 class="text-lg md:text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                            <span>📊</span> AFRICA'S FRONTIER LLM LEADERBOARD (MID-2026)
+                        </h2>
+                        <p class="text-xs md:text-sm text-zinc-300 mb-4 leading-relaxed">
+                            Evaluating foundational model performances on indigenous context, cultural understanding, and clinical diagnostics. Benchmarked across 17 languages including <strong>isiZulu, isiXhosa, Afrikaans, and Sepedi</strong>, using validated datasets: <span class="text-emerald-400 font-semibold">AfriMCQA, MasakhaNEWS, AfriMMLU, and AfriMedQA v2</span>.
+                        </p>
+                        <div class="text-[10px] md:text-xs font-mono text-zinc-400 bg-black/60 p-3 rounded-lg border border-zinc-800/80 flex flex-col sm:flex-row gap-x-6 gap-y-1.5">
+                            <span>* Source Data: AfricaLLM Benchmark Consortium (Q2 2026)</span>
+                            <span>* Hardware Equiv: Localized edge servers (South Africa Nodes)</span>
+                        </div>
+                    </div>
+
+                    <!-- Swipe Helper for touch screens -->
+                    <div class="block lg:hidden text-center bg-emerald-500/10 border border-emerald-500/20 rounded-lg py-2.5 px-3 mb-3 text-[11px] text-emerald-400 font-mono animate-pulse">
+                        Swipe horizontally to evaluate full performance metrics ↔
+                    </div>
+
+                    <!-- Interactive Benchmark Table Matrix -->
+                    <div class="border border-zinc-800 rounded-lg bg-zinc-950/30 overflow-hidden shadow-xl">
+                        <div class="p-4 bg-zinc-900/60 border-b border-zinc-800 flex items-center justify-between text-xs font-mono">
+                            <span class="font-bold text-white uppercase tracking-wider">EVALUATION METRICS & RANKINGS</span>
+                            <span class="text-zinc-400">UPDATED: 23 MAY 2026</span>
+                        </div>
+                        <div class="overflow-x-auto no-scrollbar">
+                            <table class="w-full text-left text-xs md:text-sm min-w-[850px]">
+                                <thead class="bg-zinc-950/90 border-b border-zinc-800 font-mono text-[11px] md:text-xs text-zinc-300 uppercase tracking-wider">
+                                    <tr>
+                                        <th class="py-4 px-5">Rank / Model</th>
+                                        <th class="py-4 px-4">AfriMCQA (Cult.)</th>
+                                        <th class="py-4 px-4">AfriMMLU (Knowl.)</th>
+                                        <th class="py-4 px-4">MasakhaNEWS (Class.)</th>
+                                        <th class="py-4 px-4">AfriMedQA v2 (Med.)</th>
+                                        <th class="py-4 px-4">ZAR/Cost (Est.)</th>
+                                        <th class="py-4 px-5 text-right">Overall Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-zinc-900/80">
+                                    
+                                    <tr class="hover:bg-emerald-500/5 transition-all">
+                                        <td class="py-4 px-5 font-semibold text-white flex items-center gap-2">
+                                            <span class="text-emerald-400 font-mono">👑 #01</span> Gemini 3.5 Flash <span class="text-[9px] font-mono bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">Google</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-emerald-300">90.14%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-emerald-500 h-full" style="width: 90.14%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 text-zinc-300 font-semibold">80.88%</td>
+                                        <td class="py-4 px-4 text-zinc-300">76.32%</td>
+                                        <td class="py-4 px-4 text-zinc-300">84.71%</td>
+                                        <td class="py-4 px-4 text-emerald-400 font-bold font-mono">R0.02 / 1k tkn</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-emerald-400 text-sm md:text-base">82.12%</td>
+                                    </tr>
+
+                                    <tr class="hover:bg-amber-500/5 transition-all">
+                                        <td class="py-4 px-5 font-semibold text-white flex items-center gap-2">
+                                            <span class="text-zinc-400 font-mono">🥈 #02</span> Claude 4.6 Opus <span class="text-[9px] font-mono bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">Anthropic</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-purple-300">82.45%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-purple-500 h-full" style="width: 82.45%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 text-zinc-300 font-semibold">68.13%</td>
+                                        <td class="py-4 px-4 text-zinc-300">79.19%</td>
+                                        <td class="py-4 px-4 text-zinc-300">78.99%</td>
+                                        <td class="py-4 px-4 text-amber-550 font-bold font-mono">R0.27 / 1k tkn</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-purple-400 text-sm md:text-base">77.19%</td>
+                                    </tr>
+
+                                    <tr class="hover:bg-cyan-500/5 transition-all">
+                                        <td class="py-4 px-5 font-semibold text-white flex items-center gap-2">
+                                            <span class="text-zinc-400 font-mono">🥉 #03</span> DeepSeek-V4-Pro <span class="text-[9px] font-mono bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">DeepSeek</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-blue-300">78.10%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-blue-500 h-full" style="width: 78.1%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 text-zinc-300 font-semibold">76.75%</td>
+                                        <td class="py-4 px-4 text-zinc-300">75.80%</td>
+                                        <td class="py-4 px-4 text-zinc-300">76.24%</td>
+                                        <td class="py-4 px-4 text-emerald-400 font-bold font-mono">R0.01 / 1k tkn</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-blue-400 text-sm md:text-base">76.26%</td>
+                                    </tr>
+
+                                    <tr class="hover:bg-zinc-800/10 transition-all">
+                                        <td class="py-4 px-5 font-semibold text-white flex items-center gap-2">
+                                            <span class="text-zinc-400 font-mono">🏅 #04</span> GPT-5.4 Frontier <span class="text-[9px] font-mono bg-zinc-700/30 text-zinc-300 px-2 py-0.5 rounded border border-zinc-700/40">OpenAI</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-zinc-300">78.37%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-zinc-400 h-full" style="width: 78.37%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 text-zinc-300 font-semibold">72.75%</td>
+                                        <td class="py-4 px-4 text-zinc-300">77.71%</td>
+                                        <td class="py-4 px-4 text-zinc-300">74.71%</td>
+                                        <td class="py-4 px-4 text-amber-550 font-bold font-mono">R0.18 / 1k tkn</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-zinc-300 text-sm md:text-base">75.88%</td>
+                                    </tr>
+
+                                    <tr class="hover:bg-zinc-800/10 transition-all text-zinc-300">
+                                        <td class="py-4 px-5 font-semibold flex items-center gap-2">
+                                            <span class="text-zinc-500 font-mono">⚡ #05</span> LLaMA-3-8B-ZANet <span class="text-[9px] font-mono bg-yellow-500/10 text-yellow-500 px-2 py-0.5 rounded border border-yellow-500/20">Fine-tuned</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-yellow-300">74.12%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-yellow-500 h-full" style="width: 74.12%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 font-semibold">63.12%</td>
+                                        <td class="py-4 px-4">71.04%</td>
+                                        <td class="py-4 px-4">62.88%</td>
+                                        <td class="py-4 px-4 text-emerald-400 font-bold font-mono">R0.00 / Self-Host</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-zinc-400 text-sm md:text-base">67.79%</td>
+                                    </tr>
+
+                                    <tr class="hover:bg-zinc-800/10 transition-all text-zinc-400">
+                                        <td class="py-4 px-5 font-semibold flex items-center gap-2">
+                                            <span class="text-zinc-500 font-mono">🛠️ #06</span> African-Lang-11M <span class="text-[9px] font-mono bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded border border-cyan-800/20">UCT Lab</span>
+                                        </td>
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-cyan-300">65.00%</span>
+                                                <div class="w-12 bg-zinc-850 h-2 rounded-full overflow-hidden border border-zinc-800"><div class="bg-cyan-500 h-full" style="width: 65%"></div></div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 px-4 font-semibold">55.10%</td>
+                                        <td class="py-4 px-4">69.80%</td>
+                                        <td class="py-4 px-4">48.20%</td>
+                                        <td class="py-4 px-4 text-emerald-400 font-bold font-mono">R0.00 / Free Acad</td>
+                                        <td class="py-4 px-5 text-right font-extrabold text-cyan-400 text-sm md:text-base">59.52%</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Analysis Box -->
+                    <div class="bg-emerald-950/20 border border-emerald-500/20 rounded-lg p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-xs md:text-sm">
+                        <div>
+                            <h4 class="text-white font-bold mb-3 flex items-center gap-2">
+                                <span class="text-emerald-400">✔</span> KEY TAKEAWAYS FOR SOUTH AFRICAN DEPLOYERS:
+                            </h4>
+                            <ul class="space-y-3 text-zinc-300 list-disc list-inside leading-relaxed">
+                                <li><strong>Cost Efficiency:</strong> For high-volume local text translation (Zulu/Xhosa), <strong class="text-white">DeepSeek-V4-Pro</strong> offers unmatched performance-to-cost metrics at just R0.01/1k tokens.</li>
+                                <li><strong>Contextual Accuracy:</strong> <strong class="text-white">Gemini 3.5 Flash</strong> displays leading localized reasoning indices in complex cultural structures (AfriMCQA).</li>
+                            </ul>
+                        </div>
+                        <div class="border-t md:border-t-0 md:border-l border-emerald-500/10 md:pl-6 pt-6 md:pt-0">
+                            <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-xs font-mono">LOCAL ACCURACY BY SPECIFIC DIALECT:</h4>
+                            <div class="space-y-3.5 text-zinc-300">
+                                <div>
+                                    <div class="flex justify-between mb-1.5 text-[10px] md:text-xs font-mono"><span>isiZulu (Zulu)</span><span class="text-emerald-400 font-bold">81.4% Avg</span></div>
+                                    <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden border border-zinc-750"><div class="bg-emerald-500 h-full" style="width: 81.4%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1.5 text-[10px] md:text-xs font-mono"><span>isiXhosa (Xhosa)</span><span class="text-emerald-400 font-bold">78.9% Avg</span></div>
+                                    <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden border border-zinc-750"><div class="bg-emerald-500 h-full" style="width: 78.9%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1.5 text-[10px] md:text-xs font-mono"><span>Sepedi (Northern Sotho)</span><span class="text-amber-500 font-bold">64.2% Avg</span></div>
+                                    <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden border border-zinc-750"><div class="bg-amber-500 h-full" style="width: 64.2%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VIEW 3: Interactive CLI Terminal Console -->
+                <article id="tab-cli" class="tab-view hidden space-y-4">
+                    <div class="border border-emerald-500/30 rounded-lg bg-black p-4 flex flex-col justify-between h-[340px] md:h-[460px] shadow-2xl relative font-mono transition-all">
+                        <div class="absolute top-3 right-4 text-[9px] md:text-[10px] text-zinc-500 flex items-center gap-1.5 tracking-wider">
+                            <span class="inline-block w-2.5 h-2.5 bg-red-500 rounded-full animate-ping"></span>
+                            <span>LIVE CONSOLE SHELL</span>
+                        </div>
+                        
+                        <!-- Terminal Buffer Screen -->
+                        <div class="overflow-y-auto space-y-3 pr-2 text-xs md:text-sm flex-grow custom-scroll leading-relaxed mt-4 md:mt-2" id="cli-screen">
+                            <p class="text-zinc-500">// ZA_AI Terminal Console Environment [Version 2.6.11]</p>
+                            <p class="text-zinc-500">// South African Node System. Powered by high-speed fiber backbone.</p>
+                            <p class="text-emerald-400 font-semibold">Welcome. Type "help" to view a list of available microdata systems, or run core query files directly.</p>
+                            <br>
+                        </div>
+
+                        <!-- Terminal Command Input Row -->
+                        <div class="border-t border-zinc-800 pt-4 flex items-center gap-2">
+                            <span class="text-emerald-500 font-bold text-xs md:text-sm whitespace-nowrap">za_root@ai-terminal:~$</span>
+                            <input type="text" id="cli-input" class="bg-transparent border-0 outline-none text-emerald-400 w-full focus:ring-0 font-mono text-xs md:text-sm p-0" autocomplete="off" autofocus placeholder="Type cmd here..." onkeydown="handleCliInput(event)">
+                        </div>
+                    </div>
+                    
+                    <!-- Quick commands sidebar alternative for mobile touch users -->
+                    <div class="p-4 bg-zinc-950/60 rounded-lg border border-zinc-800">
+                        <span class="text-[10px] md:text-[11px] text-zinc-400 block mb-3 font-bold uppercase font-mono tracking-wider">Touch Shortcuts (Run CLI Command Instantly):</span>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="triggerCommand('help')" class="text-xs font-mono bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 px-3 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">help</button>
+                            <button onclick="triggerCommand('news')" class="text-xs font-mono bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 px-3 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">news --latest</button>
+                            <button onclick="triggerCommand('benchmarks')" class="text-xs font-mono bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 px-3 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">benchmarks</button>
+                            <button onclick="triggerCommand('sponsors')" class="text-xs font-mono bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 px-3 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">sponsors</button>
+                            <button onclick="triggerCommand('clear')" class="text-xs font-mono bg-zinc-900 hover:bg-red-950 border border-zinc-800 text-red-400 px-3 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">clear</button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- VIEW 4: SEO Checklists / South Africa Audit -->
+                <article id="tab-seo" class="tab-view hidden space-y-6">
+                    <div class="border border-emerald-500/20 rounded-lg bg-zinc-950/40 p-4 md:p-6">
+                        <h2 class="text-lg md:text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                            <span>🔍</span> LOCAL SOUTH AFRICAN SEO COMPLIANCE SUITE
+                        </h2>
+                        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed">
+                            To rank optimally in South Africa (.co.za domains), standard SEO metrics must combine with POPIA data privacy alignments, local hosting indices (JINX/CINX latency profiles), and bilingual or multilingual semantic coverage.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Local Compliance Check Card -->
+                        <div class="border border-zinc-800 bg-zinc-950/20 p-4 md:p-6 rounded-lg space-y-4">
+                            <h3 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider border-b border-zinc-900 pb-2.5 flex items-center justify-between">
+                                <span>SEO Optimization Elements</span>
+                                <span class="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">STATUS: EXCELLENT</span>
+                            </h3>
+                            <ul class="space-y-4 text-xs md:text-sm text-zinc-300 leading-relaxed">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-500 font-bold text-lg leading-none">✔</span>
+                                    <div>
+                                        <strong class="text-white">Structured JSON-LD Schema:</strong> Included nested Article & LocalBusiness schemas referencing South African geographies (Rosebank, JHB).
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-500 font-bold text-lg leading-none">✔</span>
+                                    <div>
+                                        <strong class="text-white">Multilingual Hreflang Ready:</strong> Set up to seamlessly integrate English (en-ZA), Zulu (zu-ZA), and Xhosa (xh-ZA) context mappings.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-500 font-bold text-lg leading-none">✔</span>
+                                    <div>
+                                        <strong class="text-white">POPIA Regulatory Compliance:</strong> Strict cookie-free layout architecture ensuring data security compliance for ZA visitors.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-500 font-bold text-lg leading-none">✔</span>
+                                    <div>
+                                        <strong class="text-white">Performance Optimization:</strong> Light code payload, embedded visual assets, responsive mobile breakpoints, preventing layout shift.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Meta Tag Explorer View -->
+                        <div class="border border-zinc-800 bg-zinc-950/20 p-4 md:p-6 rounded-lg space-y-4">
+                            <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider border-b border-zinc-900 pb-2.5">
+                                REAL-TIME META INDEX CHECKER
+                            </h3>
+                            <div class="space-y-4 text-xs md:text-sm leading-relaxed">
+                                <div>
+                                    <span class="text-zinc-400 block mb-1.5 text-[10px] md:text-xs font-mono">META DESCRIPTION [LEN: 172]:</span>
+                                    <div class="bg-black/60 p-3 rounded-lg border border-zinc-800 text-zinc-300 leading-relaxed text-[11px] md:text-xs">
+                                        South Africa's premier terminal-themed portal for local AI News, Draft National AI Policy updates, and the African LLM Leaderboard. Benchmarking Zulu, Xhosa...
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-zinc-400 block mb-1.5 text-[10px] md:text-xs font-mono">GEOGRAPHIC TARGET ARRAYS:</span>
+                                    <div class="flex flex-wrap gap-1.5">
+                                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded text-[11px] font-mono">Johannesburg</span>
+                                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded text-[11px] font-mono">Cape Town</span>
+                                        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded text-[11px] font-mono">Durban</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-zinc-400 block mb-1 text-[10px] md:text-xs font-mono">SEMANTIC NODES INDEXED:</span>
+                                    <p class="text-zinc-300 text-xs leading-relaxed">
+                                        We analyze the web index mapping of crucial South African tech agencies: DCDT, POPI-A, ICASA, Telkom AI, and UCT ML Labs to optimize domain authority.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- RIGHT PANEL: Dashboard Widgets & Quick Tools (Columns: 3) -->
+            <aside class="lg:col-span-3 flex flex-col gap-6 font-mono text-xs w-full">
+                
+                <!-- WIDGET 1: System Console Monitor -->
+                <div class="border border-zinc-800 bg-zinc-950/40 p-4 md:p-5 rounded-lg space-y-3.5">
+                    <span class="text-emerald-500 font-bold block border-b border-zinc-900 pb-2 uppercase tracking-wider text-[11px] md:text-xs">📊 NETWORK SYSSTAT</span>
+                    <div class="space-y-2.5">
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Node Location:</span>
+                            <span class="text-white font-semibold text-right">ZA-GP-ROSEBANK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Server Power:</span>
+                            <span class="text-emerald-400 font-semibold text-right">99.98% / OPTIMAL</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">Active Queries:</span>
+                            <span class="text-white font-semibold text-right">418 / min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-400">POPIA Sentinel:</span>
+                            <span class="text-emerald-400 font-semibold text-right">SECURE [SSL]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WIDGET 2: Newsletter Subscription / Console Format -->
+                <div class="border border-zinc-800 bg-zinc-950/40 p-4 md:p-5 rounded-lg space-y-4">
+                    <span class="text-emerald-500 font-bold block border-b border-zinc-900 pb-2 uppercase tracking-wider text-[11px] md:text-xs">✉ LOCAL DISPATCHES</span>
+                    <p class="text-zinc-300 leading-relaxed font-sans text-xs">
+                        Subscribe for weekly deep-dives into South African AI updates, policy news, and LLM translation benchmark updates.
+                    </p>
+                    <form onsubmit="handleSubForm(event)" class="space-y-2.5 font-mono">
+                        <div class="relative rounded-lg border border-zinc-800 bg-zinc-900 flex items-center min-h-[44px]">
+                            <input type="email" id="sub-email" required placeholder="name@domain.co.za" class="bg-transparent border-0 outline-none p-2.5 text-zinc-200 w-full text-xs focus:ring-0">
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-3 rounded-lg text-xs transition-colors tracking-wider min-h-[44px] flex items-center justify-center">
+                            SUBSCRIBE_TO_LOGS
+                        </button>
+                    </form>
+                    <p class="text-[9px] text-zinc-500 text-center font-sans leading-normal">
+                        Strictly compliant with the Protection of Personal Information Act. No cookies or tracker scripts.
+                    </p>
+                </div>
+
+                <!-- WIDGET 3: Live Quick Commands Terminal Box -->
+                <div class="border border-zinc-800 bg-zinc-950/40 p-4 md:p-5 rounded-lg space-y-3.5">
+                    <span class="text-zinc-400 font-bold block border-b border-zinc-900 pb-2 uppercase tracking-wider text-[11px] md:text-xs">💡 TERMINAL HINTS</span>
+                    <p class="text-zinc-400 leading-relaxed font-sans text-xs">
+                        To interface directly with the CLI tab, navigate there and input these variables:
+                    </p>
+                    <div class="bg-black/60 p-3 rounded-lg border border-zinc-800 space-y-2.5 text-[11px] leading-relaxed">
+                        <div><span class="text-emerald-400 font-bold">help</span> - Display system commands</div>
+                        <div><span class="text-emerald-400 font-bold">news</span> - Get current SA AI news logs</div>
+                        <div><span class="text-emerald-400 font-bold">benchmarks</span> - Load model metrics</div>
+                        <div><span class="text-emerald-400 font-bold">subscribe</span> - Open registration shell</div>
+                        <div><span class="text-emerald-400 font-bold">clear</span> - Flush terminal screen</div>
+                    </div>
+                </div>
+
+            </aside>
+
+        </main>
+
+        <!-- Custom popups to replace layout-breaking alert() -->
+        <div id="toast-msg" class="fixed bottom-4 right-4 left-4 md:left-auto z-50 bg-zinc-950 border-2 border-emerald-500 text-white p-4 rounded-lg shadow-2xl max-w-sm hidden flex-col space-y-2.5 text-xs font-mono transition-all">
+            <div class="flex justify-between items-center border-b border-emerald-500/20 pb-2">
+                <span class="font-bold text-emerald-400 flex items-center gap-1.5 uppercase tracking-wider text-[10px] md:text-[11px]">⚡ SYSTEM NOTICE</span>
+                <button onclick="closeToast()" class="text-zinc-400 hover:text-white text-lg p-1 min-w-[30px] min-h-[30px] flex items-center justify-center">&times;</button>
+            </div>
+            <p id="toast-text" class="text-zinc-200 font-sans leading-relaxed text-xs"></p>
+        </div>
+
+        <!-- Full Article Detail Modal View - Designed for supreme readability -->
+        <div id="article-modal" class="fixed inset-0 bg-black/90 z-50 backdrop-blur-md hidden flex-col items-center justify-center p-4">
+            <div class="bg-zinc-950 border border-emerald-500/30 rounded-lg max-w-2xl w-full max-h-[90vh] md:max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col transition-all">
+                <div class="border-b border-zinc-900 p-4 sticky top-0 bg-zinc-950/95 backdrop-blur-sm z-10 flex justify-between items-center font-mono">
+                    <span class="text-emerald-400 font-bold text-[10px] md:text-xs tracking-wider" id="modal-category">LOG_EXPLORER</span>
+                    <button onclick="closeArticleModal()" class="text-zinc-400 hover:text-white font-bold text-xs bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 px-3.5 py-2 rounded-lg transition-colors min-h-[40px] flex items-center">&times; [CLOSE]</button>
+                </div>
+                <div class="p-5 md:p-8 space-y-5" id="modal-content">
+                    <!-- Dynamic Content gets injected here with perfect visual spacing -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Terminal Branding -->
+        <footer class="mt-auto border-t border-zinc-900 bg-zinc-950/80 px-4 py-6 text-center text-[10px] md:text-xs text-zinc-500 z-10 font-mono">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+                <div class="tracking-wide text-center lg:text-left leading-relaxed">
+                    &copy; 2026 ZA_AI TERMINAL INC. ALL RIGHTS RESERVED. IN COMPLIANCE WITH POPIA REGULATIONS.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] md:text-xs">
+                    <a href="#tab-news" onclick="switchTab('tab-news')" class="hover:text-emerald-400 transition-colors min-h-[30px] flex items-center">NEWS</a>
+                    <a href="#tab-leaderboard" onclick="switchTab('tab-leaderboard')" class="hover:text-emerald-400 transition-colors min-h-[30px] flex items-center">LEADERBOARD</a>
+                    <a href="#tab-cli" onclick="switchTab('tab-cli')" class="hover:text-emerald-400 transition-colors min-h-[30px] flex items-center">CONSOLE SHELL</a>
+                    <a href="#tab-seo" onclick="switchTab('tab-seo')" class="hover:text-emerald-400 transition-colors min-h-[30px] flex items-center">LOCAL SEO</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- AUDIO SYSTEM & CONSOLE INTERACTIVITY LOGIC -->
+    <script>
+        // Web Audio Synth context setup for classic retro keystroke beep sound effects
+        let audioCtx = null;
+        let soundEnabled = true;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Keystroke sound synthesizers
+        function playTerminalSound(frequency = 1100, duration = 0.03, type = 'square') {
+            if (!soundEnabled) return;
+            try {
+                initAudio();
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = type;
+                osc.frequency.value = frequency;
+                
+                gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch(e) {
+                console.log("Audio not allowed or blocked: ", e);
+            }
+        }
+
+        function toggleAudioSystem() {
+            soundEnabled = !soundEnabled;
+            const btn = document.getElementById('sound-btn');
+            if (soundEnabled) {
+                btn.textContent = '🔊 AUDIO: ON';
+                playTerminalSound(800, 0.1, 'sine');
+                showToast("System feedback synthetic audio enabled.");
+            } else {
+                btn.textContent = '🔇 AUDIO: OFF';
+                showToast("Synthesizer sound deactivated.");
+            }
+        }
+
+        // Tab views state machine
+        function switchTab(tabId) {
+            playTerminalSound(1300, 0.05, 'triangle');
+            
+            // Hide all tab views
+            const views = document.querySelectorAll('.tab-view');
+            views.forEach(v => v.classList.add('hidden'));
+
+            // Remove active visual styles from tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(t => {
+                t.classList.remove('active', 'border-emerald-500/40', 'text-emerald-400', 'bg-emerald-500/10', 'text-amber-500', 'border-amber-500/40', 'bg-amber-500/10', 'text-cyan-500', 'border-cyan-500/40', 'bg-cyan-500/10');
+                t.classList.add('border-zinc-800', 'text-zinc-400');
+            });
+
+            // Show target view
+            const targetView = document.getElementById(tabId);
+            if (targetView) targetView.classList.remove('hidden');
+
+            // Set current tab styles matching active theme accents
+            const activeTabBtn = document.getElementById('btn-' + tabId);
+            if (activeTabBtn) {
+                activeTabBtn.classList.remove('border-zinc-800', 'text-zinc-400');
+                
+                const wrapper = document.getElementById('terminal-wrapper');
+                if (wrapper.classList.contains('crt-glow-green')) {
+                    activeTabBtn.classList.add('border-emerald-500/40', 'text-emerald-400', 'bg-emerald-500/10', 'active');
+                } else if (wrapper.classList.contains('crt-glow-amber')) {
+                    activeTabBtn.classList.add('border-amber-500/40', 'text-amber-500', 'bg-amber-500/10', 'active');
+                } else if (wrapper.classList.contains('crt-glow-cyan')) {
+                    activeTabBtn.classList.add('border-cyan-500/40', 'text-cyan-500', 'bg-cyan-500/10', 'active');
+                } else {
+                    activeTabBtn.classList.add('border-zinc-300', 'text-white', 'bg-zinc-850', 'active');
+                }
+                
+                // Horizontal scrolling support on touch devices
+                activeTabBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+
+            if (tabId === 'tab-cli') {
+                setTimeout(() => {
+                    const input = document.getElementById('cli-input');
+                    if (input) input.focus();
+                }, 50);
+            }
+        }
+
+        // Custom Visual Color Palette Theme Selector
+        function applyTheme(themeName) {
+            playTerminalSound(950, 0.08, 'sine');
+            const wrapper = document.getElementById('terminal-wrapper');
+            const liveModeBadge = document.getElementById('live-mode-badge');
+            const logoIcon = document.getElementById('logo-icon');
+            const logoSub = document.getElementById('logo-sub');
+            
+            // Remove previous wrapper CRT classes
+            wrapper.className = "terminal-container flex-grow flex flex-col transition-all duration-300 relative border-b border-zinc-800";
+            
+            // Apply targeted styling arrays
+            if (themeName === 'green') {
+                wrapper.classList.add('crt-glow-green');
+                liveModeBadge.className = "text-[10px] md:text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 px-2 py-0.5 rounded uppercase tracking-widest animate-pulse";
+                logoIcon.className = "text-emerald-500 mr-1.5 font-extrabold text-xl font-mono";
+                logoSub.className = "text-emerald-400";
+            } else if (themeName === 'amber') {
+                wrapper.classList.add('crt-glow-amber');
+                liveModeBadge.className = "text-[10px] md:text-xs font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40 px-2 py-0.5 rounded uppercase tracking-widest animate-pulse";
+                logoIcon.className = "text-amber-500 mr-1.5 font-extrabold text-xl font-mono";
+                logoSub.className = "text-amber-400";
+            } else if (themeName === 'cyan') {
+                wrapper.classList.add('crt-glow-cyan');
+                liveModeBadge.className = "text-[10px] md:text-xs font-mono bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 px-2 py-0.5 rounded uppercase tracking-widest animate-pulse";
+                logoIcon.className = "text-cyan-500 mr-1.5 font-extrabold text-xl font-mono";
+                logoSub.className = "text-cyan-400";
+            } else if (themeName === 'contrast') {
+                wrapper.classList.add('bg-zinc-950');
+                liveModeBadge.className = "text-[10px] md:text-xs font-mono bg-zinc-800 text-zinc-300 border border-zinc-700 px-2 py-0.5 rounded uppercase tracking-widest";
+                logoIcon.className = "text-white mr-1.5 font-extrabold text-xl font-mono";
+                logoSub.className = "text-zinc-200";
+            }
+
+            // Sync active tab state
+            const currentActiveTab = document.querySelector('.nav-tab.active');
+            if (currentActiveTab) {
+                const parts = currentActiveTab.id.split('-');
+                if (parts.length > 1) {
+                    switchTab(parts.slice(1).join('-'));
+                }
+            }
+        }
+
+        // Live SAST Real-Time Clock
+        function updateSastClock() {
+            const timeSpan = document.getElementById('sast-clock');
+            if (timeSpan) {
+                const now = new Date();
+                // SAST is UTC+2
+                const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+                const sastTime = new Date(utc + (3600000 * 2));
+                
+                const timeString = sastTime.toTimeString().split(' ')[0];
+                timeSpan.textContent = timeString;
+            }
+        }
+        setInterval(updateSastClock, 1000);
+
+        // Simulated Ping response to localized exchange points
+        function fluctuatePing() {
+            const pingVal = document.getElementById('ping-val');
+            if (pingVal) {
+                const basePing = Math.floor(Math.random() * 8) + 11; // 11-19ms average fiber latency
+                pingVal.textContent = basePing + 'ms';
+            }
+        }
+        setInterval(fluctuatePing, 3000);
+
+        // Core Command Line Route Interpreter
+        function handleCliInput(event) {
+            if (event.key === 'Enter') {
+                const inputEl = document.getElementById('cli-input');
+                const command = inputEl.value.trim().toLowerCase();
+                
+                if (command.length > 0) {
+                    processCommand(command);
+                }
+                inputEl.value = '';
+            } else {
+                // Generate a keystroke beep sound effect on typical keystrokes
+                if (Math.random() > 0.3) {
+                    playTerminalSound(900 + Math.random() * 200, 0.02, 'sine');
+                }
+            }
+        }
+
+        function triggerCommand(cmdString) {
+            switchTab('tab-cli');
+            const inputEl = document.getElementById('cli-input');
+            if (inputEl) {
+                inputEl.value = cmdString;
+                setTimeout(() => {
+                    processCommand(cmdString);
+                    inputEl.value = '';
+                }, 150);
+            }
+        }
+
+        function processCommand(rawCommand) {
+            const screen = document.getElementById('cli-screen');
+            const newOutput = document.createElement('div');
+            newOutput.className = "mt-3 border-l border-zinc-800 pl-3 py-1";
+            
+            // Log the command visually in console stream
+            newOutput.innerHTML = `<span class="text-emerald-500 font-bold">za_root@ai-terminal:~$</span> <span class="text-white font-semibold">${rawCommand}</span>`;
+            screen.appendChild(newOutput);
+
+            const resultBlock = document.createElement('div');
+            resultBlock.className = "text-zinc-300 mt-1 pl-4 space-y-2";
+
+            const args = rawCommand.split(' ');
+            const primaryCmd = args[0];
+
+            switch(primaryCmd) {
+                case 'help':
+                    playTerminalSound(1100, 0.1, 'sine');
+                    resultBlock.innerHTML = `
+                        <p class="text-white font-bold">AVAILABLE ENVIRONMENT SHELL SCRIPTS:</p>
+                        <p><span class="text-emerald-400 font-bold">help</span> - Display this terminal documentation directory.</p>
+                        <p><span class="text-emerald-400 font-bold">news</span> - Query latest South African Artificial Intelligence blog postings and news logs.</p>
+                        <p><span class="text-emerald-400 font-bold">benchmarks</span> - Load Q2 2026 multilingual evaluation logs directly.</p>
+                        <p><span class="text-emerald-400 font-bold">subscribe &lt;your-email&gt;</span> - Register your interface with the POPIA-compliant newsletter database.</p>
+                        <p><span class="text-emerald-400 font-bold">sponsors</span> - Display key local institutional partners and organizations.</p>
+                        <p><span class="text-emerald-400 font-bold">clear</span> - Flush terminal screen buffer memory.</p>
+                    `;
+                    break;
+                case 'news':
+                    playTerminalSound(1150, 0.08, 'sine');
+                    resultBlock.innerHTML = `
+                        <p class="text-emerald-400 font-bold">// RECENT NEWS DATASETS FOUND IN DIRECTORY:</p>
+                        <p class="text-white font-semibold">[1] Cabinet Receives South Africa's Draft AI Policy</p>
+                        <p class="text-xs text-zinc-400">Topics covered: DCDT ethical compliance, indigenous language protection targets.</p>
+                        <br>
+                        <p class="text-white font-semibold">[2] Justice Minister Warns of Algorithmic Bias</p>
+                        <p class="text-xs text-zinc-400">Concerns: Training data devoid of historical context risk judicial segregation.</p>
+                        <br>
+                        <p class="text-white font-semibold">[3] Telkom AI Institute Pledge - R100 Million</p>
+                        <p class="text-xs text-zinc-400">Target: Building tomorrow's high-speed computing ecosystem and digital literacy skills.</p>
+                    `;
+                    break;
+                case 'benchmarks':
+                    playTerminalSound(1200, 0.12, 'sine');
+                    resultBlock.innerHTML = `
+                        <p class="text-cyan-400 font-bold">// INITIATING MULTILINGUAL EVALUATION BENCHMARK METRICS (MID-2026):</p>
+                        <p>1. <span class="text-white font-semibold">Gemini 3.5 Flash</span>: <span class="text-emerald-400 font-bold">82.12% Overall</span> [Zulu: 81.4%, Xhosa: 78.9%]</p>
+                        <p>2. <span class="text-white font-semibold">Claude 4.6 Opus</span>: <span class="text-emerald-400 font-bold">77.19% Overall</span> [Zulu: 74.2%, Xhosa: 71.9%]</p>
+                        <p>3. <span class="text-white font-semibold">DeepSeek-V4-Pro</span>: <span class="text-emerald-400 font-bold">76.26% Overall</span> [Cost: R0.01 per 1k input tokens]</p>
+                        <p>4. <span class="text-white font-semibold">UCT Lang-Model (11 Langs)</span>: <span class="text-emerald-400 font-bold">59.52% Overall</span> [Fine-tuned localized weights]</p>
+                    `;
+                    break;
+                case 'subscribe':
+                    playTerminalSound(1400, 0.15, 'triangle');
+                    const emailParam = args[1] || "";
+                    if (emailParam && emailParam.includes("@")) {
+                        resultBlock.innerHTML = `
+                            <p class="text-emerald-400 font-bold">✔ CONSOLE REGISTRATION CONFIRMED.</p>
+                            <p class="text-zinc-300">Email [${emailParam}] successfully cataloged under SA POPIA protocol guidelines. Dispatch packets queued.</p>
+                        `;
+                    } else {
+                        resultBlock.innerHTML = `
+                            <p class="text-red-400 font-bold">✖ PARAMETER ERROR.</p>
+                            <p>Syntax: <span class="text-emerald-400">subscribe &lt;your-email&gt;</span> (e.g., subscribe client@server.co.za)</p>
+                        `;
+                    }
+                    break;
+                case 'sponsors':
+                    playTerminalSound(1000, 0.05, 'sine');
+                    resultBlock.innerHTML = `
+                        <p class="text-white font-bold">ZA TECHNOLOGICAL SPONSORS & AFFILIATE PARADIGMS:</p>
+                        <p>- Department of Communications and Digital Technologies (DCDT)</p>
+                        <p>- University of Johannesburg (UJ) AI & Law Institute</p>
+                        <p>- University of Cape Town (UCT) Natural Language Labs</p>
+                        <p>- Telkom South Africa (Pty) Ltd</p>
+                    `;
+                    break;
+                case 'clear':
+                    playTerminalSound(800, 0.05, 'triangle');
+                    screen.innerHTML = '';
+                    return;
+                default:
+                    playTerminalSound(600, 0.2, 'sawtooth');
+                    resultBlock.innerHTML = `
+                        <p class="text-red-400 font-semibold">ERROR: Command "${primaryCmd}" not verified in system matrix.</p>
+                        <p class="text-xs text-zinc-500">Type <span class="text-emerald-400">help</span> to view available terminal instructions.</p>
+                    `;
+            }
+
+            screen.appendChild(resultBlock);
+            screen.scrollTop = screen.scrollHeight;
+        }
+
+        // Custom popup toasts instead of layout-breaking alert()
+        function showToast(text) {
+            const toast = document.getElementById('toast-msg');
+            const toastText = document.getElementById('toast-text');
+            if (toast && toastText) {
+                toastText.textContent = text;
+                toast.classList.remove('hidden');
+                toast.classList.add('flex');
+                
+                // Audio signal notification
+                playTerminalSound(1200, 0.15, 'triangle');
+                
+                setTimeout(() => {
+                    closeToast();
+                }, 5500);
+            }
+        }
+
+        function closeToast() {
+            const toast = document.getElementById('toast-msg');
+            if (toast) {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }
+        }
+
+        // Client side form validation
+        function handleSubForm(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('sub-email');
+            if (emailInput && emailInput.value) {
+                showToast(`Success! Email "${emailInput.value}" successfully registered under POPIA privacy standards.`);
+                emailInput.value = '';
+            }
+        }
+
+        // Detailed local blog context dictionary for custom modal overlays - Extracted and designed for absolute reading comfort
+        const articleDatabase = {
+            'policy-blog': {
+                title: "South Africa's Draft AI Policy: Deciphering the Sector-Specific Multi-Regulator Blueprint",
+                category: "REGULATORY DATA",
+                date: "10 JULY 2026",
+                content: `
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        As of mid-2026, the Department of Communications and Digital Technologies (DCDT) of South Africa has advanced the Draft National Artificial Intelligence Policy into official Cabinet review phases. Rather than appointing a singular, slow-moving overarching AI regulator, the policy embraces a highly progressive sector-specific governing structure.
+                    </p>
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        This means existing watchdogs—such as the Information Regulator (POPIA enforcement) and the National Credit Regulator—will absorb specialized AI compliance roles tailored strictly to their local industry requirements. This modular deployment keeps SA highly competitive while safeguarding core constitutional priorities.
+                    </p>
+                    <h4 class="text-white font-bold text-base md:text-lg mt-6">Addressing the Digital Language Divide</h4>
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        Furthermore, the 2026 Draft Policy establishes clear regulatory guidelines for language models deployed on public-facing government functions. There is an explicit priority towards digitizing and protecting native languages such as isiZulu, Sepedi, isiXhosa, and the indigenous Khoe and San dialects, ensuring local heritage is preserved and properly synthesized in machine databases.
+                    </p>
+                `
+            },
+            'justice-blog': {
+                title: "Preserving Constitutional Values: Justice Minister Warns Against Imported Dataset Bias",
+                category: "ETHICAL AI SYSTEMS",
+                date: "09 JULY 2026",
+                content: `
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        Delivering the keynote at the University of Johannesburg's 'AI and the Law' symposium, Minister of Justice and Constitutional Development Mmamoloko Kubayi issued a historic warning. She explained that artificial intelligence tools trained predominantly on Western demographic parameters contain implicit structural biases.
+                    </p>
+                    <blockquote class="border-l-4 border-amber-500 pl-4 py-3 my-4 italic text-zinc-300 bg-zinc-900/40 rounded-r-lg text-xs md:text-sm leading-relaxed">
+                        “The bigger risk for our country in respect of the law is the use of AI systems which are totally devoid of our historical context as a country... We risk replacing past inequalities with digitized racial segregation if algorithms are deployed blindly.”
+                    </blockquote>
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        While automated case filing and electronic court portals improve processing, Minister Kubayi urged academics and technologists to refine and rely on locally curated data pools. This guarantees judicial transparency and ensures legal decisions uphold the values of the South African Constitution.
+                    </p>
+                `
+            },
+            'telkom-blog': {
+                title: "Telkom Commits R100 Million Pledge to Launch National AI Institute Initiatives",
+                category: "INFRASTRUCTURE DEVELOPMENT",
+                date: "15 JUNE 2026",
+                content: `
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        Telkom Group CEO Serame Taukobong announced a definitive R100 million pledge at the ITU Partner2Connect coalition in Geneva. The funds will directly establish the Telkom AI Institute, a national development launchpad focused on building computing infrastructure and AI training systems.
+                    </p>
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        “Connectivity without local capability only solves half the puzzle,” Taukobong noted. The primary mandate of the institute lies in providing graphics processing compute limits and technical AI pathways to underserved South African youth and small businesses, reducing digital exclusion across all nine provinces.
+                    </p>
+                `
+            },
+            'uct-blog': {
+                title: "University of Cape Town Unveils Lightweight 11-Language Foundation Model",
+                category: "LOCAL NLP RESEARCH",
+                date: "04 MAY 2026",
+                content: `
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        In an exciting breakthrough for African computational linguistics, UCT's Department of Computer Science has successfully trained a specialized, lightweight multilingual model. Operating on a modest 125M parameter base, the model performs highly competitively on local translations and sentiment analyses.
+                    </p>
+                    <p class="text-zinc-200 leading-relaxed text-sm md:text-base">
+                        Rather than matching the massive resource footprints of frontier parameters, UCT's design concentrates heavily on qualitative training. By optimizing text corpora representing low-resource dialects like Sepedi, Ndebele, and isiZulu, the researchers have illustrated that localized, smaller models can out-compete multi-billion parameter global models on local cultural contexts.
+                    </p>
+                `
+            }
+        };
+
+        function readArticle(articleId) {
+            const article = articleDatabase[articleId];
+            if (article) {
+                playTerminalSound(1100, 0.08, 'triangle');
+                const modal = document.getElementById('article-modal');
+                const cat = document.getElementById('modal-category');
+                const content = document.getElementById('modal-content');
+                
+                if (modal && cat && content) {
+                    cat.innerHTML = `<span>[${article.category}]</span> — PUBLISHED ON ${article.date}`;
+                    content.innerHTML = `
+                        <h3 class="text-lg md:text-2xl font-bold text-white leading-tight font-sans">${article.title}</h3>
+                        <div class="h-[1px] bg-zinc-800 w-full my-4"></div>
+                        <div class="space-y-4 font-sans leading-relaxed text-xs md:text-sm">
+                            ${article.content}
+                        </div>
+                    `;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+            }
+        }
+
+        function closeArticleModal() {
+            playTerminalSound(700, 0.05, 'sine');
+            const modal = document.getElementById('article-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Initialize state variables on window load
+        window.onload = function() {
+            updateSastClock();
+            fluctuatePing();
+            
+            // Set up prompt cursor style for the CLI tab if needed
+            document.getElementById('cli-input').addEventListener('focus', () => {
+                playTerminalSound(950, 0.02, 'sine');
+            });
+        }
+    </script>
+</body>
+</html>
